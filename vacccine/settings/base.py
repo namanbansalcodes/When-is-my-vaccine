@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-SECRET_KEY = "{{ secret_key }}"
+SECRET_KEY = "naman123"
 
 
 # Application definition
