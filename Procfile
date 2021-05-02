@@ -1,1 +1,1 @@
-web gunicorn vacccine.wsgi
+web: gunicorn vacccine.wsgi
