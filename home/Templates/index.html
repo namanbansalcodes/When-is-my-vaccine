@@ -6,7 +6,8 @@
     <div class="col-5 p-3" style="background-color: cornsilk;">
         <table>
             <form action="" method="POST" class="post-form" enctype="multipart/form-data">
-
+                {% csrf_token %}
+                {{ form.as_table }}
                 <tr>
                     <td></td>
                     <td><input type="submit" value="Submit" name='submit'></td>
