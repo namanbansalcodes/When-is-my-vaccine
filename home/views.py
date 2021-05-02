@@ -19,4 +19,4 @@ def index(request):
 
         return render(request, './done.html')
 
-    return render(request, './index.html', {"form": UserForm()})
+    return render(request, './index.html ', {"form": UserForm()})

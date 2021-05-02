@@ -27,6 +27,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+SECRET_KEY = 'naman123'
 
 
 # Application definition
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'vacccine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, '/home/Templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +127,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 django_heroku.settings(locals())
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 DATABASES['default'] =  dj_database_url.config()
