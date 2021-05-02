@@ -28,6 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["whenismyvaccine.herokuapp.com"]
 
+SECRET_KEY = os.environ['SECRET_KEY']
+
 
 # Application definition
 
