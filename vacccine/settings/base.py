@@ -27,7 +27,6 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-SECRET_KEY = ''
 
 
 # Application definition

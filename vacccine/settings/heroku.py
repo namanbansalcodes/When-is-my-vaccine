@@ -12,9 +12,6 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-# False if not in os.environ
-DEBUG = env('DEBUG')
-
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
