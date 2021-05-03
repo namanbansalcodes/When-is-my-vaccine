@@ -18,6 +18,6 @@ def index(request):
 
         user.save()
 
-        return render(request, './home.done.html')
+        return render(request, './home/done.html')
 
-    return render(request, './home/index.html ', {"form": UserForm()})
+    return render(request, './home/index.html', {"form": UserForm()})
