@@ -1,8 +1,6 @@
 from django import forms
-from .models import User
+from .models import Customer
 
-
-
-class UserForm(forms.Form):
+class CustomerForm(forms.Form):
     phone = forms.IntegerField(label='Phone', required=True)
     pin = forms.IntegerField(label='Pin', required=True)

@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import UserForm
-from .models import User
+from .forms import CustomerForm
+from .models import Customer
 # Create your views here.
 
 
 def index(request):
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = CustomerForm(request.POST)
 
-        user = User(
-            phone=request.POST['Phone'],
+        user = Customer(
+            phone=request.POST['phone'],
             pin=request.POST['pin']
         )
 
@@ -18,4 +18,4 @@ def index(request):
 
         return render(request, './done.html')
 
-    return render(request, './index.html', {"form": UserForm()})
+    return render(request, './index.html', {"form": CustomerForm()})
