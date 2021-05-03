@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserForm
 from .models import User
-from .Templates import *
-
 # Create your views here.
 
 
