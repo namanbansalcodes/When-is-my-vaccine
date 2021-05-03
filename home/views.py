@@ -18,4 +18,4 @@ def index(request):
 
         return render(request, './done.html')
 
-    return render(request, './index.html', {"form": CustomerForm()})
+    return render(request, './index.html', {"form": CustomerForm(auto_id=True)})

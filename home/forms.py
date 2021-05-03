@@ -2,5 +2,5 @@ from django import forms
 from .models import Customer
 
 class CustomerForm(forms.Form):
-    phone = forms.IntegerField(label='Phone', required=True)
-    pin = forms.IntegerField(label='Pin', required=True)
+    phone = forms.IntegerField(required=True, widget=forms.TextInput(attrs={'class' : 'form-control'}))
+    pin = forms.IntegerField(required=True, widget=forms.TextInput(attrs={'class' : 'form-control'}))

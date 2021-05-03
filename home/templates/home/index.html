@@ -1,24 +1,8 @@
 {% extends "base.html" %}
 
-
 {% block content %}
-<div class="row" style="height: 100vh;">
-    <div class="col-5 p-3" style="background-color: cornsilk;">
-        <table>
-            <form action="" method="POST" class="post-form" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_table }}
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="Submit" name='submit'></td>
-                </tr>
-
-            </form>
-        </table>
-    </div>
-
-
-    <div class="col-7 p-3" style="background-color: floralwhite;">
+<div class="row justify-content-center">
+    <div class="col-6 p-3" style="background-color: floralwhite;">
         <h1 class="p-2"><b>Tired of checking the COWIN website?</b></h1>
         <h2 class="p-2"> Relax! We got you!</h2>
         <br>
@@ -27,6 +11,19 @@
 
 
     </div>
+
+    <div class="col-4 p-3" style="background-color: cornsilk;">
+
+        <form action="" method="POST" class="form_group p-5" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit" name='submit'>
+
+    </div>
+
+
+
 </div>
 
 {% endblock content %}
