@@ -16,6 +16,6 @@
         "titleBar.inactiveForeground": "#15202b99"
     },
     "peacock.color": "#6d87a0",
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\envs\\vaccine\\python.exe",
-    "python.formatting.provider": "black"
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+    "python.formatting.provider": "autopep8"
 }
