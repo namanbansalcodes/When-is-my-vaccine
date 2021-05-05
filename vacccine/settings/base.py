@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*",'www.whenismyvaccine.in']
+ALLOWED_HOSTS = ["*",'www.whenismyvaccine.in','*.whenismyvaccine.in']
 SECRET_KEY = ''
 
 
