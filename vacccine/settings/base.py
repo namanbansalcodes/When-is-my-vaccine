@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = ["*",'www.whenismyvaccine.in','*.whenismyvaccine.in']
-SECRET_KEY = ''
+SECRET_KEY = 'balh'
 
 
 # Application definition
