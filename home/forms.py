@@ -13,7 +13,7 @@ class CustomerForm(forms.Form):
                             label_suffix=''
                             )
 
-    pin = forms.IntegerField(required=True,
+    pin = forms.CharField(required=True, max_length= 60,
                              widget=forms.TextInput(attrs={'class': 'form-control'}), label_suffix='')
 
 
