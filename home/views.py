@@ -14,7 +14,7 @@ def index(request):
         phone = request.POST['phone'].lower()
 
         if len(phone) == 10 and len(pin) == 6:
-            if re.findall('^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$', email) == True and len(re.findall('[a-z]+', pin)) == 0 and len(re.findall('[a-z]+', phone)) == 0:
+            if re.match(r"[^@]+@[^@]+\.[^@]+", email) and (len(re.findall('[a-z]+', pin)) == 0 and len(re.findall('[a-z]+', phone))==0 ) :
 
                 if len(Customer.objects.filter(pin=pin)) != 0:
                     flag2 = Customer.objects.filter(pin=pin)[0].flag2
@@ -34,8 +34,8 @@ def index(request):
                 return render(request, './done.html')
 
             else:
-                pass
+                print('fail2')
         else:
-            pass
+            print('fail1')
 
     return render(request, './index.html', {"form": CustomerForm()})
