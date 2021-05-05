@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-SECRET_KEY = 'naman123'
+ALLOWED_HOSTS = ["*",'www.whenismyvaccine.in']
+SECRET_KEY = ''
 
 
 # Application definition
