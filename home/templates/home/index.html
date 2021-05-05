@@ -6,7 +6,7 @@
 <div class="row justify-content-center ">
 
     <div class="col-md-8 col-10" style="background-color: bisque; border-radius: 30px;">
-        <div class="row align-content-center">
+        <div class="row align-content-center justify-content-center">
             <div class="col-md-6 col-10">
                 <form action="" method="POST" class="form-group p-md-5 p-3" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -20,8 +20,8 @@
 
             </div>
 
-            <div class="col-md-6 col-10">
-                <img class="img-fluid" src="{% static './images/vaccine1.jpeg' %}" alt="">
+            <div class="col-md-6 col-12 p-md-0 p-2">
+                <img class="img-fluid" src="{% static './images/vaccine1.jpeg' %}" style="border-radius: 30px;" alt="">
             </div>
 
         </div>
