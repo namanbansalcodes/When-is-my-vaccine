@@ -32,12 +32,12 @@ def index(request):
                 user.save()
 
                 requests.post(
-                    "https://api.mailgun.net/v3/sandbox8d2f3b59dbeb4627bc07e28a3284f960.mailgun.org/messages",
+                    "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
                     auth=("api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
                     data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
                           "to": email,
                           "subject": "Thank for registering to WhenIsMyVaccine",
-                          "text": f"Hello {email},\nThank you for registering to WhenISMyVaccine!\n\nWe have reveived your request to receive alerts whenever vaccines get restocked in you area!\n You have registerd for the alerts for the pin: {pin}"})
+                          "text": f"Hello {email},\nThank you for registering to WhenIsMyVaccine!\n\nWe have reveived your request to receive alerts whenever vaccines get restocked in you area!\n You have registerd for the alerts for the pin: {pin}"})
 
                 return render(request, './done.html')
 
