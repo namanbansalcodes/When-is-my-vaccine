@@ -31,13 +31,48 @@
 
     {% endblock %}
 
-    <div class="row justify-content-center text-center m-2 m-md-3">
-        <p>Designed, Developed & Deployed by <a href="https://www.linkedin.com/in/namanb009">Naman</a></p>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+
+    <div class="row justify-content-center m-2 m-md-5">
+
+        <div class="col-md-4 col-10 p-md-5 p-3" style="background-color: bisque; border-radius: 30px;">
+            <h2>Help us keep the servers running!</h2>
+            <p>Your donations will help us scale our hosting and mailing services. This will help us provide a seamless
+                service to you and your loved ones! </p>
+           
+
+            <br>
+
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <img class='img-fluid' src="{% static './images/upi.jpg'%}" alt="">
+
+                </div>
+            </div>
+        </div>
+
+            <!--
+            <div class="razorpay-embed-btn text-center" data-url="https://pages.razorpay.com/pl_H7DgNSjH9OlrZO/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+                <script>
+                  (function(){
+                    var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+                    if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+                    s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+                    rzp && rzp.init && rzp.init()}})();
+                </script>
+              </div>
+              -->
+
+
+        </div>
+
+        <div class="row justify-content-center text-center m-2 m-md-3">
+            <p>Designed, Developed & Deployed by <a href="https://www.linkedin.com/in/namanb009">Naman</a></p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

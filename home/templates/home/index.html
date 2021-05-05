@@ -3,20 +3,33 @@
 
 
 {% block content %}
-<div class="row justify-content-center">
+<div class="row justify-content-center ">
 
-    <div class="col-md-4 col-10" style="background-color: bisque; border-radius: 30px;">
+    <div class="col-md-8 col-10" style="background-color: bisque; border-radius: 30px;">
+        <div class="row align-content-center">
+            <div class="col-md-6 col-10">
+                <form action="" method="POST" class="form-group p-md-5 p-3" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
 
-        <form action="" method="POST" class="form-group p-md-5 p-3" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">
+                            <input type="submit" value="Submit" name='submit'
+                                style="background-color: transparent; border-style: none; color: white;"></button>
+                    </div>
 
-            <input type="submit" value="Submit" name='submit'>
+            </div>
+
+            <div class="col-md-6 col-10">
+                <img class="img-fluid" src="{% static './images/vaccine1.jpeg' %}" alt="">
+            </div>
+
+        </div>
+
+
 
     </div>
 
+    {% endblock content %}
 
 
-</div>
-
-{% endblock content %}
