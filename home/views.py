@@ -42,7 +42,7 @@ def index(request):
                 data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
                       "to": email,
                       "subject": "Thank for registering to WhenIsMyVaccine",
-                      "text": f"Hello {email},\nThank you for registering to WhenIsMyVaccine!\n\nWe have reveived your request to receive alerts whenever vaccines get restocked in you area!\n You have registerd for the alerts for the pin: {pins}"})
+                      "text": f"Hello {email},\nThank you for registering to WhenIsMyVaccine!\n\nWe have received your request for alerts whenever vaccines get restocked in you area!\n You will be alerted for the pins: {pins}"})
 
             return render(request, './done.html')
 
