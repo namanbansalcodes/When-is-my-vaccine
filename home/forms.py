@@ -8,7 +8,7 @@ class CustomerForm(forms.Form):
                             label_suffix=''
                             )
 
-    phone = forms.CharField(required=True, strip=True, max_length=10,
+    phone = forms.CharField(required=True, strip=True, max_length=10, min_length=10,
                             widget=forms.TextInput(attrs={'class': 'form-control'}), label='Phone Number',
                             label_suffix=''
                             )

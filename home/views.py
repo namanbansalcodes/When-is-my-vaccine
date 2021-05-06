@@ -33,20 +33,20 @@ def index(request):
                     user.save()
 
                 else:
-                    return
-
-                    
+                    return render(request, './index.html', {'form': CustomerForm(), 'flag': True})
 
             requests.post(
-                    "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
-                    auth=(
-                        "api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
-                    data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
-                            "to": email,
-                            "subject": "Thank for registering to WhenIsMyVaccine",
-                            "text": f"Hello {email},\nThank you for registering to WhenIsMyVaccine!\n\nWe have reveived your request to receive alerts whenever vaccines get restocked in you area!\n You have registerd for the alerts for the pin: {pins}"})
+                "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
+                auth=(
+                    "api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
+                data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
+                      "to": email,
+                      "subject": "Thank for registering to WhenIsMyVaccine",
+                      "text": f"Hello {email},\nThank you for registering to WhenIsMyVaccine!\n\nWe have reveived your request to receive alerts whenever vaccines get restocked in you area!\n You have registerd for the alerts for the pin: {pins}"})
 
             return render(request, './done.html')
 
+        else:
+            return render(request, './index.html', {'form': CustomerForm(), 'flag': True})
 
-    return render(request, './index.html', {"form": CustomerForm()})
+    return render(request, './index.html', {"form": CustomerForm(), 'flag': False})

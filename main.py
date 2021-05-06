@@ -104,6 +104,7 @@ while True:
                     table['flag2'] == 1 and table['flag1'] == 0)]['email'].values
 
                 for email in emails:
+                    print(f'{pins[i]} {email}')
                     requests.post(
                         "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
                         auth=(

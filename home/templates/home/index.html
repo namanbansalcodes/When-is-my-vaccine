@@ -6,8 +6,8 @@
 <div class="row justify-content-center ">
 
     <div class="col-md-8 col-10" style="background-color: bisque; border-radius: 30px;">
-        <div class="row align-content-center justify-content-center">
-            <div class="col-md-6 col-10">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-10 align-content-center">
                 <form action="" method="POST" class="form-group p-md-5 p-3" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
@@ -18,7 +18,19 @@
                                 style="background-color: transparent; border-style: none; color: white;"></button>
                     </div>
 
+                    {% if flag %}
+                    <div id="flag" title="Flag" style="color: red;" class='p-md-3 p-2'>
+                        <p><b>Incorrect phone, email or pincode fields</b></p>
+                        <p>1. Phone Number can be 10 digit integer only.</p>
+                        <p>2. Make sure the Email is written correctly.</p>
+                        <p>3. You can enter 10 pincodes seperated by a space.</p>
+                        <p>4. Pincodes have to be a 6 digit integer only.</p>
+                    </div>
+                    {% endif %}
+
             </div>
+
+
 
             <div class="col-md-6 col-12 p-md-0 p-2">
                 <img class="img-fluid" src="{% static './images/vaccine1.jpeg' %}" style="border-radius: 30px;" alt="">
@@ -31,5 +43,3 @@
     </div>
 
     {% endblock content %}
-
-
