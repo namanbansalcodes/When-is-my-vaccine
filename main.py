@@ -76,16 +76,17 @@ while True:
     for i in range(len(pins)):
         if avail[i] != current[i]:
             if avail[i] > current[i]:
-                people = table[table['pin'] == pins[i]]
+                emails = table[table['pin'] == pins[i]]['email'].values
 
-                for j in range(len(people)):
+                for email in emails:
+                    print(f'{pin} {email}')
                     requests.post(
                         "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
                         auth=("api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
                         data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
-                            "to": people[j]['email'].values[0],
+                            "to": email,
                             "subject": "Thank for registering to WhenIsMyVaccine",
-                            "text": f"Hello {people[j]['email'].values[0]}, \n Vaccines are available in your area. For pin: {pin}"})
+                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pin}"})
 
                 cur.execute(
                     f'UPDATE home_customer SET flag1=1, flag2=1 WHERE pin={pins[i]};')
@@ -97,25 +98,24 @@ while True:
                 conn.commit()
 
             elif avail[i] == 1:
-                peope = table[table['pin'] == pins[i] and (
-                    table['flag2'] == 1 and table['flag1'] == 0)]
+                print(f'{pin} {email}')
+                
+                emails = table[table['pin'] == pins[i] and (
+                    table['flag2'] == 1 and table['flag1'] == 0)]['email'].values
 
-                for person in people:
+                for email in emails:
                     requests.post(
                         "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
                         auth=(
                             "api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
                         data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
-                            "to": people[j]['email'].values[0],
+                            "to": email,
                             "subject": "Thank for registering to WhenIsMyVaccine",
-                            "text": f"Hello {people[j]['email'].values[0]}, \n Vaccines are available in your area. For pin: {pin}"})
+                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pin}"})
 
                 cur.execute(
                     f'UPDATE home_customer SET flag1=1 WHERE flag1=0 and pin={pins[i]};')
                 conn.commit()
-
-    print(f'Current: {current}')
-    print(f'Avaliable: {avail}')
 
 
     time.sleep(180)
