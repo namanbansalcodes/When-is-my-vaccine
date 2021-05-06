@@ -13,6 +13,6 @@ class CustomerForm(forms.Form):
                             label_suffix=''
                             )
 
-    pin = forms.CharField(required=True, max_length=60,
+    pin = forms.CharField(required=True, max_length=69,
                           widget=forms.TextInput(attrs={'class': 'form-control'}), label='Pincodes (seperated by space)', 
                           label_suffix='')

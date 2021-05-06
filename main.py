@@ -79,14 +79,14 @@ while True:
                 emails = table[table['pin'] == pins[i]]['email'].values
 
                 for email in emails:
-                    print(f'{pin} {email}')
+                    print(f'{pins[i]} {email}')
                     requests.post(
                         "https://api.mailgun.net/v3/whenismyvaccine.in/messages",
                         auth=("api", "83c8481eed353ca9d76bbdd3101a2b33-2a9a428a-5bb25d17"),
                         data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
                             "to": email,
                             "subject": "Thank for registering to WhenIsMyVaccine",
-                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pin}"})
+                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pins[i]}"})
 
                 cur.execute(
                     f'UPDATE home_customer SET flag1=1, flag2=1 WHERE pin={pins[i]};')
@@ -98,8 +98,8 @@ while True:
                 conn.commit()
 
             elif avail[i] == 1:
-                print(f'{pin} {email}')
-                
+                print(f'{pins[i]} {email}')
+
                 emails = table[table['pin'] == pins[i] and (
                     table['flag2'] == 1 and table['flag1'] == 0)]['email'].values
 
@@ -111,7 +111,7 @@ while True:
                         data={"from": "When is my vaccine? <alerts@whenismyvaccine.in>",
                             "to": email,
                             "subject": "Thank for registering to WhenIsMyVaccine",
-                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pin}"})
+                            "text": f"Hello {email}, \n Vaccines are available in your area. For pin: {pins[i]}"})
 
                 cur.execute(
                     f'UPDATE home_customer SET flag1=1 WHERE flag1=0 and pin={pins[i]};')
